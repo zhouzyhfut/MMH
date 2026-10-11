@@ -22,7 +22,7 @@ On top of MMH we propose **PMLF**, a paradigm-aware multimodal learning framewor
 
 | Stage | Directory | What it does |
 | --- | --- | --- |
-| 1. Prompt-guided pretraining | `pretrain_clip/` | A multimodal LLM (Gemini-2.5-pro) generates a sample-level description of the context induced by each elicitation task; the video encoder is aligned with these descriptions by cross-modality contrastive learning against a frozen CLIP `ViT-B/32` text encoder. |
+| 1. Prompt-guided pretraining | `pretrain_clip/` | A multimodal LLM (Gemini-2.5-pro) generates a sample-level description of the context induced by each elicitation task; the video encoder is aligned with these descriptions by cross-modality contrastive learning against a frozen CLIP text encoder. |
 | 2. Multimodal joint training | `CLIPtrans/` | Audio (13-d MFCC), text (768-d BERT-base-Chinese) and the pre-trained video encoder (714-d OpenFace features) are fused with cross-attention and optimised with cross-entropy plus audio↔text / audio↔video contrastive losses. |
 
 ---
@@ -32,8 +32,6 @@ On top of MMH we propose **PMLF**, a paradigm-aware multimodal learning framewor
 The **MMH** dataset is available on Hugging Face:
 **[HFUT-MMH-Lab/multimodal_mental_health_dataset_MMH](https://huggingface.co/datasets/HFUT-MMH-Lab/multimodal_mental_health_dataset_MMH)**
 
-It is not redistributed through this repository; only the extracted
-per-modality features are released, with no personal information disclosed.
 
 ## 🛠️ Environment
 
