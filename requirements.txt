@@ -1,0 +1,25 @@
+# MMH — environment
+#
+#   pip install -r requirements.txt
+#
+# Notes:
+#   * torch / torchvision must match your CUDA driver. Install the CPU build
+#     instead if you have no GPU (see https://pytorch.org for the exact command).
+#   * OpenAI CLIP is not published on PyPI under its own name (the PyPI "clip"
+#     package is an unrelated clipboard tool). It is installed here through the
+#     "openai-clip" distribution, which provides the same "clip" module. To build
+#     it from the official source instead, replace that line with:
+#         clip @ git+https://github.com/openai/CLIP.git
+#   * setuptools is pinned below 82 because clip.py still does
+#     "from pkg_resources import packaging", and setuptools 82 removed
+#     pkg_resources (see openai/CLIP#528) — without the pin, "import clip" fails
+#     with ModuleNotFoundError on Python 3.12+ environments.
+
+openai_clip==1.0.1
+tensorboardX==2.6.2.2
+torch==2.4.1
+torchvision==0.19.1
+numpy>=1.24
+pandas>=2.0
+scikit-learn>=1.3
+setuptools<82
