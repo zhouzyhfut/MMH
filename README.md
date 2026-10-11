@@ -31,11 +31,6 @@ On top of MMH we propose **PMLF**, a paradigm-aware multimodal learning framewor
 
 ## 📦 Data Availability
 
-The **MMH** dataset is **not redistributed through this repository**. Data
-collection was approved by an ethics review board, informed consent was obtained
-from all participants, and only the **extracted per-modality features** are
-released — no personal information is disclosed. Please contact the authors for
-access procedures.
 
 ## 🛠️ Environment
 
