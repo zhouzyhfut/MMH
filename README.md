@@ -1,8 +1,6 @@
 # Differential Mental Disorder Detection with Psychology-Inspired Multimodal Stimuli
 
-### MMH — a psychology-inspired multimodal mental health dataset and PMLF
-
-**ACM MM 2026**
+##  ACM MM 2026
 
 ---
 
@@ -31,6 +29,11 @@ On top of MMH we propose **PMLF**, a paradigm-aware multimodal learning framewor
 
 ## 📦 Data Availability
 
+The **MMH** dataset is available on Hugging Face:
+**[HFUT-MMH-Lab/multimodal_mental_health_dataset_MMH](https://huggingface.co/datasets/HFUT-MMH-Lab/multimodal_mental_health_dataset_MMH)**
+
+It is not redistributed through this repository; only the extracted
+per-modality features are released, with no personal information disclosed.
 
 ## 🛠️ Environment
 
@@ -94,16 +97,6 @@ per modality and split.
     └── video.csv                             # video      (714-d OpenFace)
 ```
 
-* Stage 1: `trainvideo.txt` and `traintext.txt` hold one path per line **without a
-  label**; line *i* of both files must refer to the same sample.
-* Stage 2: each line is `<path> <label>`; the four labels follow the class order of
-  the paper (Table 2) — MD(0) / SC(1) / ANX(2) / HC(3).
-  `train.py` uses `trainpath/` + `valpath/`, `test.py` uses `testpath/`.
-* The video branch expects **714-dimensional** features
-  (`SimpleCNN(input_dim=714)` in `CLIPtrans/model.py` and
-  `pretrain_clip/pretrainclipmodel.py`); the audio and text dimensions are inferred
-  from the data automatically. Audio files of the `label == 3` class are stored
-  transposed and are transposed back by the loader.
 
 ---
 
